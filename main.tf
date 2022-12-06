@@ -1,6 +1,12 @@
 module "vpc" {
   source     = "./vendor/modules/vpc"
   cidr_block = var.vpc_cidr_block
-  subnets = var.subnets
-  env = var.env
+  subnets    = var.subnets
+  env        = var.env
+  AZ         = var.AZ
 }
+
+output "out" {
+  value = module.vpc.out
+}
+
